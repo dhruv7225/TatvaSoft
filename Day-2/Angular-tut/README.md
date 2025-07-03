@@ -1,6 +1,7 @@
 # AngularTut
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.20.
+This is a simple and stylish Angular form where users can enter their name, email, age, and gender. After submitting, the details are shown below in a nice-looking card. It uses basic Angular features like forms, data binding, and condition display.
+
 
 ## Development server
 
