@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>📝 User Information Form</h2>
+
+  <form #userForm="ngForm" (ngSubmit)="onSubmit()" class="form-box">
+    <label>Name</label>
+    <input type="text" name="name" [(ngModel)]="name" required />
+    <br>
+    <label>Email</label>
+    <input type="email" name="email" [(ngModel)]="email" required />
+    <br>
+    
+    <label>Age</label>
+    <input type="number" name="age" [(ngModel)]="age" required />
+    <br>
+    
+    <label>Gender  </label>
+    <select name="gender" [(ngModel)]="gender" required>
+      <option value="" disabled selected>Select</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+    <br>
+
+    <div class="btn-group">
+      <button type="submit" [disabled]="!userForm.form.valid">Submit</button>
+      <button type="button" class="reset-btn" (click)="resetForm(userForm)">Reset</button>
+    </div>
+  </form>
+
+  <div *ngIf="!submitted" class="info-box">
+    <p>Please fill and submit the form to see the result.</p>
+  </div>
+
+  <div *ngIf="submitted" class="result-box">
+    <h3>✅ Submitted Data</h3>
+    <p><strong>Name:</strong> {{ name }}</p>
+    <p><strong>Email:</strong> {{ email }}</p>
+    <p><strong>Age:</strong> {{ age }}</p>
+    <p><strong>Gender:</strong> {{ gender }}</p>
+  </div>
+</div>
